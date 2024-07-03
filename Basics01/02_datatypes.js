@@ -1,17 +1,18 @@
 "use strict";       // Treats all Js code as newer version.
 
 
-/*
-    number: 1234, upto 2^53.
-    bigInt: above 2^53
-    string : "Name"
-    boolean : true/false
-    null : standalone value or empty
-    undefined : not assigned
-    symbol : for uniqueness
-    object
-*/
 
+// TYPES OF DATATYPES
+
+/* 1) Primitive Datatypes: There are 7 primitive datatypes
+        String: "Name"
+        Number: 1234, upto 2^53.
+        Boolean: true/false
+        null: standalone value or empty
+        undefined: not assigned
+        Symbol: for uniqueness
+        BigInt: Number above 2^53
+*/
 
 let name = "Prashant"
 console.log(typeof name);
@@ -29,6 +30,45 @@ let state
 console.log(typeof state);      // Its datatype is undefined
  
   
+
+
+
+// 2) Reference or Non-primitive Datatypes: there are 3
+        // Array: Group of homogenous elements
+
+            const heroes = ["Shaktiman, Spiderman, Superman"];
+            for(let i=0; i<=2; i++){
+                console.log(heroes[i]);
+            }
+
+        // Objects: Groups multiple items with different datatypes
+
+            let myObj = {
+                name: "Prashant",
+                age: 22,
+                location: "Delhi",
+                isLoggedIn: true
+            }
+
+        // Functions: Block of code with some functionality
+
+            const myFunction = function(){
+                                    let a=10
+                                    let b=20
+                                    let c= a+b
+                                    console.log(c);
+                                }
+                myFunction();
+
+
+
+
+
+
+
+
+
+
 
 
 // TYPE CONVERSIONS

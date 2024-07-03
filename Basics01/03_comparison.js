@@ -22,5 +22,5 @@ console.log(null >= 0);     //true
     Here, the reason is that an equality check (==) and conparisons (<,>,<=,>=) works differently.
     Comparisons convert null to number, treat it as 0. 
     Therefore, (null > 0) is false but (null >= 0) is true
-
 */
+
