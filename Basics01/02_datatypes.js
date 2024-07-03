@@ -12,6 +12,7 @@
     object
 */
 
+
 let name = "Prashant"
 console.log(typeof name);
 
@@ -26,7 +27,7 @@ console.log(typeof box);        // Its datatype is object
 
 let state
 console.log(typeof state);      // Its datatype is undefined
-
+ 
   
 
 
@@ -108,9 +109,8 @@ console.log("Value of Score 6 is " + score6InNumber);
 
 
 
-
-
 // ECMA stands for European Computer Manufacturers Associatio which is a Script for JS Standards
+// link to ECMA: https://tc39.es/ecma262/
 
 
 // alert(4+3)       //This will cause error becoz we are using nodejs and not browser.
