@@ -1,2 +1,2 @@
 # JavaScript-tutorial
-A repo for learning JS with easy programs including notes in commments
+A repo for learning JS
