@@ -31,29 +31,37 @@ console.log(hundreds.toLocaleString('en-IN'));      // Converts to Indian Number
 
 console.log(Math);
 
+// abs
 console.log(Math.abs(-7));      // Returns absolute value of a number which means non-negation value without sign.
 
-
+// round
 console.log(Math.round(4.7566));    // Rounds to the nearest integer without decimals
 
-
+//  ceil
 console.log(Math.ceil(4.3));        // Always gives upper value
 
-
+// floor
 console.log(Math.floor(4.7));       // Always gives lower value
 
-
+// min
 console.log(Math.min(4,6,2,7));     // Gives smallest number
 
-
+// max
 console.log(Math.max(4,6,2,7));     // Gives largest number
 
+// random
+console.log(Math.random());         // Gives random values like 0.1, 0.4, 0.7, 0.6, 0.8, etc.
 
-console.log(Math.random());
-console.log(Math.random() * 10 + 1);
+console.log(Math.random() * 10 + 1);        // Gives value above 0 like 1.6, 3.6, 6.3, etc becoz this + 1 adds to 0.
 
+// random with floor
+console.log(Math.floor(Math.random() * 10 + 1));        // Gives a single random floor value 
 
+// Giving range for the random number generating
+const min = 40
+const max = 50
 
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);     // Formula for giving range
 
 
 
