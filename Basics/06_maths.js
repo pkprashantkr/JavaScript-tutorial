@@ -1,10 +1,13 @@
 // -----------------------Number-----------------------
 
+// Different ways to declare Number
 const score = 100
 console.log(score);
 
 const balance = new Number(98.6547)         // Will give additional functions or properties
 console.log(balance);
+
+//====== Functions=======
 
 // toString
 console.log(balance.toString());        // Convert the number into String
