@@ -104,7 +104,9 @@ console.log(JSUser4);      // This is giving myKey1 with right syntax and dataty
 
 
 // Lock value of objects and make it unchangable
-
+Object.freeze(JSUser4)
+JSUser4.location = "Jaipur"             // This change is not reflecting
+console.log(JSUser4.location);
 
 
 
