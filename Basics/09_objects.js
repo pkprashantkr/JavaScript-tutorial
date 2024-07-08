@@ -109,6 +109,77 @@ JSUser4.location = "Jaipur"             // This change is not reflecting
 console.log(JSUser4.location);
 
 
+console.log("\n------------------------------\n");
+
+//Creating Functions
+
+JSUser.greeting = function(){
+    console.log("Hello User.....!");
+}
+
+console.log(JSUser.greeting);           // It don't executes function but, gives only function reference.
+console.log(JSUser.greeting());         // This will execute the function
+
+
+// getting name from object using function
+JSUser.greeting2 = function(){
+    console.log(`Hello JSUser, ${this.name}`);      //This refers to the instances of the object
+}
+
+console.log(JSUser.greeting2()); 
+
+
+
+// Declaring objects under objects using Object Literals
+
+const GoodUser = {
+    email: "user@gmail.com",
+    fullname: {
+        firstname: "ravi",
+        secondname: "ranjan"
+    }
+}
+
+console.log(GoodUser);
+
+
+
+console.log("\n------------------------------------\n");
+
+// Declaring Objects using Constructor or Singleton-------------------------------------
+
+// const tinderUser = {}                // This is the way of declaring a non-Singleton Object
+
+const tinderUser = new Object()         // This is the way of declaring a Singleton Object
+
+tinderUser.id = "12345"
+tinderUser.name = "Prashant"
+tinderUser.isLoggedIn = false
+
+console.log(tinderUser);
+
+console.log("------------------------------\n");
+
+
+// Declaring objects under objects using singleton
+const regularUser = new Object()
+
+regularUser.email = "some@gmail.com"
+regularUser.fullname = new Object()
+
+regularUser.fullname.firstname = "Anjali"
+regularUser.fullname.lastname = "Kumari"
+
+console.log(regularUser.fullname.firstname);                // Accessing nested Objects 
+console.log(regularUser.fullname.lastname);               
+
+
+
+
+
+
+
+
 
 
 
