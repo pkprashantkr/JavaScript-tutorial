@@ -157,3 +157,35 @@ function returnSecondValue(getArr){
 
 console.log(returnSecondValue(newArr));                     // Return 2nd value from newArr array
 console.log(returnSecondValue([344, 535, 256, 654]));       // Return 2nd value from this array
+
+
+
+
+console.log("---------------------Scope in JS------------------------ \n");
+//-------------------- Scope in JS ------------------------------------------
+
+
+// Block Scope
+
+if(true){
+    let a = 10
+    const b = 20
+    var c = 50
+}
+// console.log(a);      // this will throw error as let have the block scope within {}
+// console.log(b);      // this will throw error as const have the block scope within {}
+console.log(c);         // this will not throw error becoz var don't have the concept of scope therefore, it is not often used.
+
+
+// Global Scope
+
+let a = 300
+
+if(true){
+    let a = 10
+    console.log("Block or Local variable a: ", a);
+}
+console.log("Global variable a: ", a);
+
+
+
