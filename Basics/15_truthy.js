@@ -52,12 +52,33 @@ if(marks === 0){
 //Check for empty object
 const emptyObj = {}
 
-if (Object.keys(emptyObj).length === 0){
+if ( Object.keys(emptyObj).length === 0 ){
+
     console.log("Object is empty");
 }
 
 
 
+// Ternary Operator (?):
+
+const price = 80
+price >= 100 ? console.log("Equal or greater than 100") : console.log("less than 100")
 
 
-// Nullish Coalescing Operator (??):
+
+
+
+// Nullish Coalescing Operator (??): The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+let val;
+val = 5 ?? 10
+console.log(val);
+
+val = null ?? 30
+console.log(val);
+
+val = undefined ?? 53
+console.log(val);
+
+val = null ?? 40 ?? 24
+console.log(val);
