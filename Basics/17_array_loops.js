@@ -139,8 +139,108 @@ heroes.forEach(function (item){
 })
 
 
+
 // taking arrow function as callback function
 heroes.forEach ( (item) => {
     console.log(item);
 })
+
+
+
+// pass reference of the function to foreach
+function printHeroes(item){
+    console.log(item);
+}
+
+heroes.forEach(printHeroes)         // The reference of the function is passed
+
+
+// foreach also takes additional parameters such as index, array
+heroes.forEach( (item, index, arr) => {
+    console.log(item, index, arr);
+})
+
+
+
+// Objects as elements in an array
+
+const myCoding = [
+    {
+        langName: "Javascript",
+        langFile: "js"
+    },
+    {
+        langName: "C++",
+        langFile: "cpp"
+    },
+    {
+        langName: "Ruby",
+        langFile: "rb"
+    }
+]
+
+myCoding.forEach( (item) => {
+    console.log(item);              // Print both langName and langFile...
+})
+
+
+myCoding.forEach( (item) => {
+    console.log(item.langName);              // Print langName...
+})
+
+
+myCoding.forEach( (item) => {
+    console.log(item.langFile);              // Print langFile...
+})
+
+
+
+// foreach don't return anything
+
+const heroes2 = ["batman", "superman","flash","marvel", "hulk"]
+
+const values = heroes2.forEach( (item) => {
+    console.log(item);
+})
+
+console.log(values);            // foreach is not returning any value to variable values
+
+
+
+const value = heroes2.forEach( (item) => {
+    return item                 // If we try to explicitly return by using return keyword, it still don't return.
+})
+
+console.log(values);            // foreach is not returning any value to variable values
+
+
+
+
+// filter() is a function that takes callback function along with the condition to return the answer.
+const mynums = [1,2,3,4,5,6,7,8,9,10]
+
+const newnums = mynums.filter( (num) => num > 4)        // here, the implicit return is taking place here.
+
+console.log(newnums);
+
+
+// explicit return
+const mynums2 = [1,2,3,4,5,6,7,8,9,10]
+
+const newnums2 = mynums.filter( (num) => {
+    return num > 4                     // here, the implicit return will not take place, we have to use explicit return while using curly braces {}.
+})        
+
+console.log(newnums2);
+
+
+// above functionality using foreach loop
+mynums2.forEach( (num) => {
+    if(num > 4){
+        newnums.push(num)
+    }
+})
+
+console.log(newnums2);
+
 
