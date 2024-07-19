@@ -77,6 +77,8 @@ console.log("Map size after deletion: " + map.size);
 
 
 
+// ---------------------------- forin loop ------------------------------------------------------
+
 
 // Using forin loop to access keys and values in an object
 
@@ -90,4 +92,55 @@ const obj = {
 for (const key in obj) {
     console.log(`${key} shortcut is for ${obj[key]}`);
 }
+
+
+
+// Using forin loop on arrays
+
+const prog = ["js", "rb","py","java", "cpp"]
+
+for (const key in prog) {
+    // console.log(key);               // This will print the index values as keys
+    console.log(prog[key]);            // This will give the values of array
+}
+
+
+
+// Using forin loop on map
+
+const map2 = new Map()              
+
+map2.set("AFC", "Africa")
+map2.set("UK", "United Kingdom")
+map2.set("GER", "Germany")
+
+for (const keys in map2) {
+    console.log(keys);              // This will not print anything as The map object is not iterable.
+}
+
+
+
+
+console.log("--------------------------- Foreach Loop----------------------------\n");
+// ------------------------------------------- foreach -------------------------------------------------
+
+
+const heroes = ["batman", "superman","flash","marvel", "hulk"]
+
+// arrays already have foreach loop attached with it so we can directly use foreach by this...
+
+// heroes.forEach(function (){})        // this is the syntax.          
+heroes.forEach(function (item){                   
+    
+    // here foreach is taking function(item) as callback function where item is the elements in the array and write the body of function inside the {}.
+
+    console.log(item);
+
+})
+
+
+// taking arrow function as callback function
+heroes.forEach ( (item) => {
+    console.log(item);
+})
 
