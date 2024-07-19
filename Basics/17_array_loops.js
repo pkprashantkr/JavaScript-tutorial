@@ -40,8 +40,24 @@ console.log(map);                   // Accessing all the values in an object
 
 // Accessing map elements from forof loop
 for (const key of map) {
-    console.log(key);
+    console.log(key);           // This will print both key and values
 }
+
+for (const [key, value] of map) {
+    console.log(key, ": ", value);           // This will print key and values separately
+}
+
+
+// Access objects using forof loop
+const myObj = {
+    game1: 'NFS',
+    game2: 'Football',
+    game3: 'Tennis'
+}
+
+// for (const [key, value] of object) {
+//     console.log(key, ": ", value);               // This will give error if try to print key & values separately
+// }
 
 
 //map.get is used to get the value from the key name.
@@ -62,10 +78,16 @@ console.log("Map size after deletion: " + map.size);
 
 
 
+// Using forin loop to access keys and values in an object
 
+const obj = {
+    js: 'Javascript',
+    cpp: 'C++',
+    rb: 'ruby',
+    swift: 'Swift by Apple'
+}
 
-
-
-
-
+for (const key in obj) {
+    console.log(`${key} shortcut is for ${obj[key]}`);
+}
 
