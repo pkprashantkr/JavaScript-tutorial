@@ -244,3 +244,4 @@ mynums2.forEach( (num) => {
 console.log(newnums2);
 
 
+// Filter or search from the list of objects
