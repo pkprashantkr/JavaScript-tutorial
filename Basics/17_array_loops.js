@@ -244,4 +244,9 @@ mynums2.forEach( (num) => {
 console.log(newnums2);
 
 
-// Filter or search from the list of objects
+// Filter or search from the array of objects
+
+
+
+// ====================== Pending ============================
+
