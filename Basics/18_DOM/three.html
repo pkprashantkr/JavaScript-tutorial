@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM </title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector('.parent')        // accessing the div with class parent.
+    console.log(parent);                // Returns HTML element
+    
+// Accessing child from parent
+    console.log(parent.children);       // Returns HTML Collection
+    parent.children[0].style.color = 'orange'        // Changing color of First Child
+    console.log(parent.children[0].innerHTML);       // Returns value of first child
+
+    for (let i = 0; i < parent.children.length; i++) {          // Accessing each element of the HTML collection
+        console.log(parent.children[i].innerHTML);
+        
+    }
+
+    console.log(parent.firstElementChild);      // Access first child
+    console.log(parent.lastElementChild);      // Access last child
+
+
+// Access Parent from Child
+document.querySelector('.day')          // Gives first html element with day class.
+
+
+</script>
+
+</html>

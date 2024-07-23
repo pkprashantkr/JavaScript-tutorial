@@ -74,3 +74,15 @@
 
 // Accessing Elements by Class Name
     //  document.getElementsByClassName('heading')          // Returns HTML Collection
+
+
+// Accessing multiple properties of heading by Class Name
+    /*
+        const myHeading = document.getElementsByClassName('heading')
+        myHeading.forEach( function (h) {
+            h.style.color = 'black';
+            h.style.backgroundColor = 'green';
+            h.style.padding = '10px';
+            h.innerHTML = "Prashant";
+        })
+    */
