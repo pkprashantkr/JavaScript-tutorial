@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove Elements from DOM </title>
+</head>
+<body style="background-color: black; color: #fff;">
+    <ul class= "language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+
+    // Making a function to add New Languages in the ul tag after JavaScript.
+    function addLanguage(langName){
+        const li = document.createElement('li')          // Creating New Element
+        li.innerHTML = `${langName}`                        // Passing the argument to the innerHTML.
+        document.querySelector('.language').appendChild(li)     //Appending the new Element in the ul tag using language class.
+    }
+    addLanguage("Python")                                   // Calling the function and passing Python as the innerHTML
+    addLanguage("TypeScript")                               // Calling the function and passing TypeScript as the innerHTML.
+
+
+// In this above function, when we are using innerHTML, it has the traverse the whole tree in the document which creates optimization issues sometime.
+
+// There is a optimized approach below to do the same task in the above function
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')         // Create new Element
+        const addText = document.createTextNode(langName)       // creating text node
+        li.appendChild(addText)                         // appending the created text node in the New element
+        document.querySelector('.language').appendChild(li)        
+    }
+    addOptiLanguage("CSS")
+    addOptiLanguage("OOPS")
+    addOptiLanguage("C")
+    addOptiLanguage("C#")
+    addOptiLanguage("C++")
+
+
+// Edit the added values -----------------------------
+
+    // 1st way by using innerHTML
+    const secondLang = document.querySelector('li:nth-child(2)')
+    secondLang.innerHTML = "Ruby"
+
+    // 2nd way by using textContent
+    const secondLanguage = document.querySelector('li:nth-child(2)')
+    const newli = (document.createElement('li'))
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //  3rd way by creating new text node   (Most optimized way)
+    const newlist = (document.createElement('li'))
+    newlist.appendChild(document.createTextNode("Selenium"))
+    document.querySelector('li:nth-child(2)').replaceWith(newlist)
+
+    // 4th way by using outerHTML 
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li> Appium </li>"
+
+
+// Remove the last added value --------------------------
+
+    // removing last element
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.remove()
+
+    // removing last element
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+    
+
+    
+
+</script>
+</html>

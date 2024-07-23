@@ -33,8 +33,13 @@
 
 
 // Access Parent from Child
-document.querySelector('.day')          // Gives first html element with day class.
+const dayOne = document.querySelector('.day')          // Gives first html element with day class.
+console.log(dayOne);
+console.log(dayOne.parentElement);                     // Directly accessing parent element
+console.log(dayOne.nextElementSibling);                     // Directly accessing next sibling of .day class element
 
+console.log("NODES: ", parent.childNodes);      // Gives all child Nodes of a parent including all text, class, etc.
+// This will return 9 NodeList elements having 4 childNodes and 5 linebreaks.
 
 </script>
 
