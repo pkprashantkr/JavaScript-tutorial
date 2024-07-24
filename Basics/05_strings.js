@@ -55,5 +55,5 @@ console.log(str2.split('-'));       // Gives array of strings separated by a sep
 console.log("The Student " + name + " is " + age + " years old");        
 
 
-// This syntax is more used in the modern days and its more readable. This is known as String Interpolation
+// This syntax is more used in the modern days and its more readable. This is known as String Interpolation or Template Literals.
 console.log(`The Student ${name} is ${age} years old`);     
