@@ -1,4 +1,4 @@
-// There are two ways to create objects
+ // There are two ways to create objects
 
 // 1) By constructors: It makes Singleton, which means there is only single instance of the object.
 // Object.create()
