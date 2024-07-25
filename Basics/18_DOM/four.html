@@ -10,11 +10,15 @@
 </body>
 
 <script>
-    const div = document.createElement('div')       // Creating New Elemenets using DOM
+    const division = document.createElement('div')       // Creating New Elemenets using DOM
     console.log(div);
 
     // Attach the new Element to the page.
-    document.body.appendChild(div)
+    document.body.appendChild(div)      // Used to add single node to the end of the node (Inside of node)
+    document.body.append(div)           // Used to add multiple nodes to the end of the node (Inside of node)  //Ex: document.body.append(newElement1, newElement2) 
+    document.body.prepend(div)          // Adds at the start of node (inside of node)
+    document.body.before(div)           // Adds before the node (outside of node)
+    document.body.after(div)            // Adds after the node (outside of node)
 
     // Giving class name and id to the new created div
     div.className = "main"
@@ -22,9 +26,26 @@
     div.style.backgroundColor = 'green'
     div.style.padding = '10px'
 
+    // Giving attributes using setAttribute()
+    div.setAttribute('title', 'generatedTitle')             // Set Attribute by giving attribute name and its value.
+
+    //Getting attribute using getattribute()
+    div.getAttribute('id')
+
+
     div.innerText = Math.round(Math.random() * 10 + 1)      // Giving the inner text a random value using Math object
 
-    div.setAttribute('title', 'generatedTitle')             // Set Attribute by giving attribute name and its value.
+    
+
+    // Removing the new added element by remove()
+    division.remove();
+
+
+    // Removing the new added element by using removeChild() : 
+    // removeChild is called on the parent and the item which has to be removed is passed as and argument.
+    const element1 = document.getElementById('parentElement');
+    const element2 = document.getElementById('childElement');
+    element1.removeChild(element2);
 
 
 </script>
