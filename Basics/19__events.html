@@ -87,12 +87,21 @@
 </body>
 
 <script>
+
+    let counter = 1
     function btnClick(){
-        console.log("Button clicked");
+        const btn = document.querySelector('#btn1')
+        btn.innerText = `Btn Click ${count}`
+        count++
+        
+         
     }
 
+    let num = 1
     function dblClick(){
-        console.log("Button clicked Double time");
+        const dblbtn = document.querySelector('#dblbtn')
+        dblbtn.innerText = `Btn Click ${num}`
+        num++
     }
 
     function headingClick(){
@@ -120,4 +129,5 @@
     })
 
 </script>
+
 </html>
