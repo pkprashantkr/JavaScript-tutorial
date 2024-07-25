@@ -6,7 +6,8 @@
     <title> DOM </title>
 </head>
 <body style="background-color: black; color: #fff;">
-    
+
+    <p class="content"> This is a paragraph </p>
 </body>
 
 <script>
@@ -46,6 +47,14 @@
     const element1 = document.getElementById('parentElement');
     const element2 = document.getElementById('childElement');
     element1.removeChild(element2);
+
+
+
+    // Q. Create a p tag and give it a class and some styling. Now create a new class in CSS and try to append this class to the p element usig classList
+
+    let para = document.querySelector('p')
+    // para.setAttribute('class', 'newContent')        // This will overwrite the previous class
+    para.classList.add('newClass')                     // This will add new class and previoud class will be there as before.
 
 
 </script>
