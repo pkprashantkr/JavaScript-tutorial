@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        h1{
+            background-color: cyan;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+        }
+        button{
+            color: white;
+            margin-top: 5px;
+            padding: 10px;
+            cursor: pointer;
+            height: 100px;
+            width: 100px;
+        }
+        #btn1{    
+            background-color: purple;
+            border-radius: 4px;
+        }
+
+        #downBtn{    
+            background-color: rgb(24, 34, 187);
+            border-radius: 4px;
+        }
+
+        #upBtn{    
+            background-color: rgb(187, 130, 24);
+            border-radius: 4px;
+        } 
+
+        #enterBtn{    
+            background-color: rgb(187, 57, 24);
+            border-radius: 4px;
+        }
+
+        #leaveBtn{    
+            background-color: rgb(24, 187, 179);
+            border-radius: 4px;
+        }
+
+        #moveBtn{    
+            background-color: rgb(182, 28, 105);
+            border-radius: 4px;
+        }
+
+        #overBtn{    
+            background-color: rgb(170, 8, 57);
+            border-radius: 4px;
+            color: black;
+        }
+
+        #scrollBtn{    
+            background-color: rgb(170, 8, 8);
+            border-radius: 4px;
+        }
+
+        #touchBtn{    
+            background-color: rgb(3, 46, 19);
+            border-radius: 4px;
+        }
+
+        #touchEndBtn{    
+            background-color: rgb(59, 48, 56);
+            border-radius: 4px;
+        }
+
+        #touchMoveBtn{    
+            background-color: rgb(53, 6, 40);
+            border-radius: 4px;
+        }
+
+        #pointerMouse{    
+            background-color: rgb(10, 51, 112);
+            border-radius: 4px;
+        }
+        
+        
+
+        #btn2{
+            background-color: rgb(54, 41, 165);
+            padding: 3px;
+            border-radius: 50%;
+            font-family: sans-serif;
+            position: absolute;
+            bottom: 33px;
+            right: 32px;
+            height: 50px;
+            width: 50px;
+            font-size: 30px;
+        }
+        #btn2:hover{
+            background-color: rgb(27, 19, 97);
+        }
+        #dblbtn{
+            background-color: rgb(0, 128, 11);
+            border-radius: 4px;
+        }
+        #addDiv{
+            height: 100px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(99, 43, 43);
+            border: 2px black solid;
+            border-radius: 4px;
+            margin: 4px;
+            font-size: 25px;
+            font-family: sans-serif;
+            color: rgb(65, 196, 14);
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+
+    <h1  onclick="headingClick()"> Add Event Listeners</h1>
+
+    <button id="btn1" onclick="btnClick()"> Click Me..! </button>       <!-- By using onclick inside the element, we can only apply one event on the element.-->
+
+    <button id="dblbtn" ondblclick="dblClick()"> Click 2 Time </button>
+    <br>
+
+    <button id="downBtn" > Mouse Down </button>
+
+    <button id="upBtn" > Mouse Up </button>
+
+    <button id="enterBtn" > Move mouse Here </button>
+
+    <button id="leaveBtn" > Move mouse away </button>
+    
+    <button id="moveBtn" > Move mouse in button </button>
+    
+    <button id="overBtn" > <span style="background-color: rgb(237, 252, 26);"> This is child of the button </span> </button>
+    
+    <button id="scrollBtn" > Move Scroll Wheel </button>
+
+    <button id="touchBtn" > Touch Pressed on Mobile </button>
+
+    <button id="touchEndBtn" > Touch Release on Mobile </button>
+
+    <button id="touchMoveBtn" > Drag the button </button>
+
+    <button id="pointerMouse" > Move the button </button>
+
+    
+    
+
+    <div class="container">
+        <button id="btn2" title="Add New Card"> + </button>
+    </div>
+
+</body>
+
+<script>
+
+    // click
+    let counter = 1
+    function btnClick(){
+        const btn = document.querySelector('#btn1')
+        btn.innerText = `Btn Click ${count}`
+        count++     
+    }
+
+    // double click
+
+    let num = 1
+    function dblClick(){
+        const dblbtn = document.querySelector('#dblbtn')
+        dblbtn.innerText = `Btn Click ${num}`
+        num++
+    }
+
+    function headingClick(){
+        console.log("Heading is clicked")
+    }
+
+    const btn2 = document.querySelector('#btn2')
+    btn2.addEventListener('click', function (e){
+        console.log("Button clicked by Event listner");
+    })
+    // By using addEventListener on the element, we can apply multiple events on the element.
+
+
+    // mousedown: event fires when mouse button is pressed down
+    const mouseDown = document.querySelector('#downBtn')
+    mouseDown.addEventListener('mousedown', () => {
+        mouseDown.innerText = "Mouse click is down"
+    })
+
+    // The difference between click and mousedown is that in "click" the event is considered complete when the mouse button is press and not until it is released,
+    // In "mousedown", the event is considered complete when the button is pressed.
+
+
+    // mouseup: event fires when mouse button is released
+    const mouseUp = document.querySelector('#upBtn')
+    mouseUp.addEventListener('mouseup', () => {
+        mouseUp.innerText = "Mouse click is up"
+    })
+
+
+    // mouseenter: event fires when mouse cursor is hovered on the button.
+    let number = 1
+    const enterMouse = document.querySelector('#enterBtn')
+    enterMouse.addEventListener('mouseenter', () => {
+        enterMouse.innerText = `Cursor is on the button ${number}`
+        number++
+    })
+
+
+    // mouseenter: event fires when mouse cursor leaves the button.
+    let ginti = 1
+    const leaveMouse = document.querySelector('#leaveBtn')
+    leaveMouse.addEventListener('mouseleave', () => {
+        leaveMouse.innerText = `Cursor is on the button ${ginti}`
+        ginti++
+    })
+
+    // mouseenter: event fires when mouse cursor moves inside the button.
+    let counters = 1
+    const moveMouse = document.querySelector('#moveBtn')
+    moveMouse.addEventListener('mousemove', () => {
+        moveMouse.innerText = `Cursor is moving in the button ${counters}`
+        counters++
+    })
+
+
+    // mouseover: event fires when mouse cursor is hovered on the button.
+    let numb = 1
+    const overMouse = document.querySelector('#overBtn')
+    overMouse.addEventListener('mouseover', () => {  
+        console.log(overMouse);
+    })
+
+    // The difference between mouseenter and mouseover is that mouseover also fires in the child while mouseenter doesn't fires.
+
+
+
+    // pointermove: It works for both Mobiles and Laptop/Desktops
+    let counting = 1
+    const pointerMouse = document.querySelector('#pointerMouse')
+    pointerMouse.addEventListener('pointermove', () => {
+        pointerMouse.innerText = `Pointer is moved ${counting}`
+        counting++
+    })
+    
+
+
+    // wheel: fires when the scroll wheel is moved.
+    let countings = 1
+    const scrollMouse = document.querySelector('#scrollBtn')
+    scrollMouse.addEventListener('wheel', () => {
+        scrollMouse.innerText = `Scroll is moved ${counting}`
+        counting++
+    })
+
+
+    // drag: Fires when the element is dragged
+    let dragging = 1
+    const dragMouse = document.querySelector('#dragMouse')
+    dragMouse.addEventListener('wheel', () => {
+        dragMouse.innerText = `Scroll is moved ${dragging}`
+        dragging++
+    })
+
+
+    // ------------ Touch Screen Events -------------------
+
+
+    // touchstart: fires when the element is touched or pressed in mobile phone or other touch devices. NOt works in non- touchable devices
+    let touch = 1
+    const touchBtn = document.querySelector('#touchBtn')
+    touchBtn.addEventListener('touchstart', () => {
+        touchBtn.innerText = `Button is touched ${touch}`
+        touch++
+    })
+
+
+    // touchend: fires when the element is released in mobile phone or other touch devices. Not works in non- touchable devices
+    let touchEnd = 1
+    const touchEndBtn = document.querySelector('#touchEndBtn')
+    touchEndBtn.addEventListener('touchend', () => {
+        touchEndBtn.innerText = `Button is touched ${touchEnd}`
+        touchEnd++
+    })
+
+
+    // touchmove: fires when the element is pressed and dragged in mobile phone or other touch devices. Not works in non- touchable devices
+    let touchMoved = 1
+    const touchMoveBtn = document.querySelector('#touchMoveBtn')
+    touchMoveBtn.addEventListener('touchmove', () => {
+        touchMoveBtn.innerText = `Button is Dragged ${touchMoved}`
+        touchMoved++
+    })
+
+
+
+
+
+
+
+    // Q. Event to create a card with numbering when a button is clicked.
+    let count = 1
+
+    const addCard = document.querySelector('#btn2')
+    btn2.addEventListener('click', function(){
+        const newCard = (document.createElement('div'))
+        newCard.id = "addDiv"
+        newCard.innerText = count++
+        
+        const container = document.querySelector('.container')
+        container.append(newCard)
+    })
+
+</script>
+
+</html>
