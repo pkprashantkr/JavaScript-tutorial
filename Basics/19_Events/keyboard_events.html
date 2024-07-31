@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <h1 tabindex="0">Keyboard Events</h1>           <!-- tabindex makes any element focusable -->    
+    
+    <input id="input1" type="text" name="fname" placeholder="input1">
+    <input id="input2" type="text" name="lname" placeholder="input2">
+</body>
+
+<script>
+
+    // keypress: Fires when key is pressed
+        const input = document.querySelector('#input1')
+    input.addEventListener('keypress', (e) => {
+        console.log("Key Value:", e.key);
+    })
+    const inputCode = document.querySelector('input')
+    inputCode.addEventListener('keypress', (e) => {
+        console.log("Key Code:", e.code);
+    })
+    
+
+    // keyup: Fires when key is released
+    const input2 = document.querySelector('#input2')
+    input2.addEventListener('keyup', (e) => {
+        console.log("Key Value:", e.key);
+    })
+
+    const input2Code = document.querySelector('#input2')
+    input2Code.addEventListener('keyup', (e) => {
+        console.log("Key Code:", e.code);
+    })
+    
+</script>
+</html>
