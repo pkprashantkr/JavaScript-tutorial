@@ -15,14 +15,14 @@
 
     Let's take an example code to understand:
 
-        // let val1 = 10
-        // let val2 = 5
-        // function addNum(num1, num2){
-        //     let total = num1 + num2
-        //     return total
-        // }
-        // var result1 = addNum(val1, val2)
-        // var result2 = addNum(10,2)
+    // line 1: let val1 = 10
+    // line 2: let val2 = 5
+    // line 3: function addNum(num1, num2){
+    // line 4:     let total = num1 + num2
+    // line 5:     return total
+    // line 6: }
+    // line 7: var result1 = addNum(val1, val2)
+    // line 8: var result2 = addNum(10,2)
 
     Here, Firstly
 
