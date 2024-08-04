@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JS</title>
+</head>
+<body>
+    <h1> Hello...... </h1>
+    <button id="resolve-btn" > Resolve Promise </button>
+    <button id="reject-btn" > Reject Promise </button>
+</body>
+</html>
+
+<script>/* 
+    Promises: - It is a solution of callback hell.
+              - These are used to remove problem of callback hells.
+              - Promise is for "eventual" completion of task. It is an object in JS.
+
+              - Syntax:
+                        let promise = new Promise(resolve, reject) => {......}
+
+              - resolve and reject are callbacks provided by JS
+
+              - There can be 3 states of promise:
+                    a) Pending : The result is undefined
+                    b) Fulfilled (resolved) : the result is a value (fulfilled)
+                    c) Rejected : the result is an error object
+*/
+
+// Pending
+let promise1 = new Promise((resolve, reject) => {
+    console.log("I am a Promise");
+})
+
+// Resolved
+let promise2 = new Promise((resolve, reject) => {
+    console.log("I am a Promise");
+    resolve("Success")
+})
+
+// Rejected
+let promise3 = new Promise((resolve, reject) => {
+    console.log("I am a Promise");
+    reject("Error")
+})
+
+
+// Example question of Promise: Resolving promise after 5 sec.
+
+const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Resolved Promise")
+    }, 5000)
+})
+
+
+// Button to resolve Promise
+
+const resolveBtn = document.querySelector('#resolve-btn')
+const rejectBtn = document.querySelector('#reject-btn')
+
+
+const promise = new Promise((resolve, reject) => {
+    resolveBtn.addEventListener('click', () => {
+        resolve('Promise is Resolved')
+    })
+    rejectBtn.addEventListener('click', () => {
+        reject('Promise is Rejected')
+    })
+})
+
+promise.then((value) => {                        // .then() : triggers when promise is resolved
+    console.log(value);                          // Printing value in the resolving code.
+}).catch((error) => {                            // .catch() : triggers when promise is rejected                     
+    console.log(error);                          // Printing value in the rejecting code.
+}).finally(() => {                               // finally calls even the promise is resolved or rejected
+    console.log('Finally');
+})
+
+
+
+
+</script>

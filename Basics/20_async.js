@@ -92,3 +92,4 @@ getData(1, () => {                          // giving 1 as dataId and a callback
               - These are used to remove problem of callback hells.
               - Promise is for "eventual" completion of task. It is an object in JS.
 */
+
