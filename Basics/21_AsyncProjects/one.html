@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+
+    <style>
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #start{
+            background-color: rgb(23, 156, 5);
+            color: white;
+            padding: 15px;
+            border-radius: 20%;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #stop{
+            background-color: rgb(167, 10, 10);
+            color: white;
+            padding: 15px;
+            border-radius: 20%;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1> Click start to change the background color every second</h1> 
+
+    <div class="buttons">
+        <button id="start">Start</button>   
+        <button id="stop">Stop</button>   
+    </div>
+</body>
+
+<script>
+
+    // Generate random colors
+
+    const randomColor = function() {
+        const hex  = "0123456789ABCDEF"
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    };
+
+    let intervalID;
+
+    const startColor = function(){
+
+        if(!intervalID){
+            intervalID = setInterval(changeBackground, 1000)
+        }
+
+        function changeBackground(){
+            document.body.style.backgroundColor = randomColor()
+        }
+    }
+
+    const stopColor = function(){
+        clearInterval(intervalID)
+        intervalID = null;          // this line is just clearing the value of intervalID as it was overriding every time when button was clicked. This makes the code more clear and shows professionalism.
+    }
+
+document.querySelector('#start').addEventListener('click', startColor)
+document.querySelector('#stop').addEventListener('click', stopColor)
+
+</script>
+</html>
