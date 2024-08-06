@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="background-color: black;">
+    
+</body>
+
+<script>
+    const requestURL = 'https://api.github.com/users/pkprashantkr'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestURL)
+
+    // continuously monitoring state
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);            // getting state
+        if(xhr.readyState == 4){
+            // If we will try to access things within data then, this will give undefined as we get string from the reponse of url. So, can't access like objects 
+            const data = JSON.parse(this.responseText)      // JSON.parse converts the string into JSON data.      
+            console.log(`No. of followers is: ${data.followers}`);      
+            console.log(`Avatar is: ${data.avatar_url}`);
+            console.log(data);  
+        } 
+    }
+    console.log("Here");
+    xhr.send()                          // to send the request
+
+</script>
+
+</html>
