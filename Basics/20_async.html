@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button id="intervalStart"> Start Interval</button>
+    <button id="intervalStop"> Stop Interval</button>
+    <button id="stop"> Stop Timeout </button> <br><br>
+</body>
+</html>
+
+<script>
 /*
     Synchronous JavaScript (Default):
         - It is a synchronous language which means the code runs in a particular sequence of instructions given in the program.
@@ -28,6 +44,8 @@
 
 */
 
+
+
 // setTimeout(): this makes us to set a time to execute a piece of code.
 
 function greet() {
@@ -50,6 +68,43 @@ console.log("four");
 console.log("five");
 
 
+
+
+// setInterval: It makes some work in the equal interval of time
+let interval;
+
+// adding button event to stop the interval
+document.querySelector('#intervalStart').addEventListener('click', () => {      
+    interval = setInterval(() => {
+    console.log("Hello Prashant");
+}, 1000)
+})
+
+
+// clearInterval: It is used to cancel interval that was previously established by setInterval.
+
+//adding button event to stop the interval
+document.querySelector('#intervalStop').addEventListener('click', () => {       
+    clearInterval(interval)
+    console.log("INTERVAL STOPPED");
+    
+})
+
+
+
+// clearTimeout: It is used to cancel a timeout that was previously established by setTimeout.
+const stopTimeout = setTimeout(()=> {
+    console.log("Timeout not stopped");  
+}, 3000)
+
+document.querySelector('#stop').addEventListener('click', () => {       // setting clearTimeout in an button event
+    clearTimeout(stopTimeout)
+    console.log("STOPPED");
+})
+
+
+
+
 // Callbacks: A function passed as an argument to another function.
 
 function sum(a, b){
@@ -61,6 +116,7 @@ function calculator(a, b, sumCallBack){
 }
 
 calculator(1, 2, sum)           // sum function is passed as callback.
+
 
 
 
@@ -86,10 +142,7 @@ getData(1, () => {                          // giving 1 as dataId and a callback
 
 // It is called nesting of callback functions. or Callback Hell because it is very difficult to read and understand. It is a problem in programming.
 
+// To resolve this problem the concept of promises is introduced.
 
-/* 
-    Promises: - It is a solution of callback hell.
-              - These are used to remove problem of callback hells.
-              - Promise is for "eventual" completion of task. It is an object in JS.
-*/
 
+</script>
